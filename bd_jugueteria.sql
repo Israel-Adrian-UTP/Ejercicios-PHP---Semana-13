@@ -1,0 +1,16 @@
+-- CREANDO TABLA TIPO
+CREATE TABLE tipo (
+    codtip INT AUTO_INCREMENT PRIMARY KEY,
+    nomtip VARCHAR(50) NOT NULL
+);
+
+-- CREANDO TABLA PRODUCTO
+CREATE TABLE producto (
+    codpro INT AUTO_INCREMENT PRIMARY KEY,
+    nompro VARCHAR(100) NOT NULL,
+    prepro DECIMAL(10,2) NOT NULL,
+    canpro INT NOT NULL,
+    fotpro VARCHAR(255),
+    codtip INT,
+    FOREIGN KEY (codtip) REFERENCES tipo(codtip) ON DELETE CASCADE
+);
